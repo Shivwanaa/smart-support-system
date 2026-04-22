@@ -1,0 +1,5 @@
+flask
+scikit-learn
+joblib
+numpy
+confluent-kafka==2.3.0
