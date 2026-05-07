@@ -36,18 +36,17 @@ services:
   auth-service:
     build: ./services/auth-service
     container_name: auth-service
+
     ports:
-      - "5000:5000"
+      - "8000:8000"
+
     env_file:
       - ./services/auth-service/.env
-    environment:
-      PGHOST: postgres
-      PGUSER: admin
-      PGPASSWORD: admin
-      PGDATABASE: supportdb
-      PGPORT: 5432
+
     depends_on:
       - postgres
+
+    restart: always
   ticket-service:
     build: ./services/ticket-service
     container_name: ticket-service
